@@ -4,9 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Links - Seção de Materiais</title>
+
     <style>
+
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Bahnschrift, 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             background-image: url('plano-fundo.png');
             background-size: cover;
             background-position: center;
@@ -15,138 +23,361 @@
             flex-direction: column;
             align-items: center;
             min-height: 100vh;
-            margin: 0;
             padding: 20px;
-            font-size: 1em;
+            overflow-x: hidden;
         }
 
         .main-wrapper {
             width: 100%;
-            max-width: 1000px;
+            max-width: 1200px;
             display: flex;
             flex-direction: column;
             align-items: center;
+            animation: fadeIn 1s ease;
         }
 
         .container-header {
             width: 100%;
-            max-width: 700px;
-            background: rgba(255, 255, 255, 0.15);
-            backdrop-filter: blur(15px);
-            border: 1px solid rgba(255, 255, 255, 0.3);
-            padding: 25px;
-            border-radius: 20px;
-            margin-bottom: 20px;
+            max-width: 760px;
+            background: rgba(10, 10, 10, 0.45);
+            backdrop-filter: blur(18px);
+            -webkit-backdrop-filter: blur(18px);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            padding: 30px;
+            border-radius: 28px;
+            margin-bottom: 30px;
             color: white;
             text-align: center;
+            box-shadow:
+                0 10px 40px rgba(0, 0, 0, 0.55),
+                inset 0 1px 0 rgba(255,255,255,0.08);
+            transition: all 0.4s ease;
+        }
+
+        .container-header:hover {
+            transform: translateY(-3px);
+            box-shadow:
+                0 15px 45px rgba(0, 0, 0, 0.65),
+                0 0 20px rgba(197, 160, 89, 0.25);
         }
 
         .columns-container {
             display: flex;
-            gap: 20px;
+            gap: 25px;
             width: 100%;
             justify-content: center;
+            align-items: stretch;
         }
 
         .column {
             width: 48%;
-            background: rgba(255, 255, 255, 0.15);
-            backdrop-filter: blur(15px);
-            border: 1px solid rgba(255, 255, 255, 0.3);
-            padding: 20px;
-            border-radius: 20px;
-            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+            background: rgba(12, 12, 12, 0.40);
+            backdrop-filter: blur(18px);
+            -webkit-backdrop-filter: blur(18px);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            padding: 25px;
+            border-radius: 24px;
+            box-shadow:
+                0 10px 35px rgba(0, 0, 0, 0.45),
+                inset 0 1px 0 rgba(255,255,255,0.05);
             color: white;
+            transition: all 0.35s ease;
         }
 
-        /* Título Principal ampliado */
+        .column:hover {
+            transform: translateY(-4px);
+            box-shadow:
+                0 14px 40px rgba(0, 0, 0, 0.60),
+                0 0 18px rgba(197, 160, 89, 0.18);
+        }
+
         h1 { 
             margin: 0; 
             font-size: 3em; 
+            letter-spacing: 2px;
             color: #C5A059; 
-            text-shadow: 0 0 8px rgba(197, 160, 89, 0.6); 
+            text-shadow:
+                2px 2px 6px rgba(0, 0, 0, 0.9),
+                0 0 8px rgba(197, 160, 89, 0.6);
         }
 
-        .brasao { width: 140px; margin: 15px 0; }
+        .brasao {
+            width: 180px;
+            margin: 20px 0 10px;
+            filter:
+                drop-shadow(0 8px 15px rgba(0,0,0,0.65))
+                drop-shadow(0 0 12px rgba(197,160,89,0.20));
+            transition: transform 0.4s ease;
+        }
 
-        /* Subtítulos escurecidos (Ouro Velho Escuro) */
+        .brasao:hover {
+            transform: scale(1.03);
+        }
+
         h2 { 
             margin-top: 0; 
-            border-bottom: 2px solid #8B6E36; 
-            padding-bottom: 10px; 
+            border-bottom: 2px solid rgba(139, 110, 54, 0.8); 
+            padding-bottom: 12px; 
             font-size: 1.4em; 
             text-align: center; 
-            color: #8B6E36;
+            color: #C5A059;
+            letter-spacing: 1px;
+            text-shadow:
+                2px 2px 5px rgba(0, 0, 0, 0.9),
+                0 0 6px rgba(0, 0, 0, 0.7);
         }
 
         .link-button {
-            display: block;
-            background-color: rgba(255, 255, 255, 0.85);
-            color: #333;
-            padding: 10px;
-            margin: 8px 0;
-            text-align: center;
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            background: linear-gradient(
+                135deg,
+                rgba(245, 211, 101, 0.20),
+                rgba(255,255,255,0.10)
+            );
+            color: #f1f1f1;
+            padding: 12px 15px;
+            margin: 10px 0;
             text-decoration: none;
-            border-radius: 8px;
-            transition: all 0.4s ease;
+            border-radius: 12px;
+            transition: all 0.35s ease;
             font-weight: bold;
-            font-size: 0.9em;
-            border: 1px solid rgba(255, 255, 255, 0.5);
+            font-size: 0.92em;
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            box-shadow:
+                inset 0 1px 0 rgba(255,255,255,0.08),
+                0 4px 10px rgba(0,0,0,0.25);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .link-icon{
+            width: 35px;
+            height: 35px;
+            object-fit: contain;
+            flex-shrink: 0;
+        }
+
+        .link-button span{
+            flex: 1;
+            text-align: center;
+            margin-right: 24px;
+        }
+
+        .link-button::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: -120%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(
+                120deg,
+                transparent,
+                rgba(255,255,255,0.20),
+                transparent
+            );
+            transition: all 0.6s ease;
+        }
+
+        .link-button:hover::before {
+            left: 120%;
         }
 
         .link-button:hover {
-            background-color: #C5A059;
+            background: linear-gradient(
+                135deg,
+                #C5A059,
+                #d6b26d
+            );
             color: #ffffff;
-            transform: scale(1.02);
-            border: 1px solid #ffffff;
-            box-shadow: 0 0 10px rgba(197, 160, 89, 0.6);
+            transform: translateY(-2px) scale(1.01);
+            border: 1px solid rgba(255,255,255,0.4);
+            box-shadow:
+                0 0 18px rgba(197, 160, 89, 0.45),
+                0 8px 20px rgba(0,0,0,0.45);
         }
 
-        footer { text-align: center; color: white; font-weight: bold; text-shadow: 1px 1px 4px black; padding: 20px; font-size: 1.1em; }
+        footer {
+            margin-top: 20px;
+            font-size: 1.5em;
+            padding-top: 12px;
+            letter-spacing: 7px;
+            color: #C5A059;
+            text-align: center;
+            text-shadow:
+                2px 2px 6px rgba(0, 0, 0, 0.9),
+                0 0 8px rgba(197, 160, 89, 0.6);
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(15px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @media (max-width: 900px) {
+
+            .columns-container {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .column {
+                width: 100%;
+            }
+
+            h1 {
+                font-size: 2.2em;
+            }
+
+            .brasao {
+                width: 150px;
+            }
+        }
+
     </style>
 </head>
+
 <body>
 
 <div class="main-wrapper">
+
     <div class="container-header">
         <h1>SEÇÃO DE MATERIAIS - 3º BC</h1>
-        <img src="Brasão 3BC.png" alt="Brasão 3BC" class="brasao">
+
+        <img src="Logo P4.png" alt="Logo P4" class="brasao">
     </div>
 
     <div class="columns-container">
-        <!-- Coluna 1 -->
+
+        <!-- COLUNA 1 -->
         <div class="column">
-            <h2>LINKS DE FÁCIL ACESSO</h2>
-            <a href="https://www.contabilizasp.fazenda.sp.gov.br/siafemnet/index.aspx" class="link-button" target="_blank">SIAFEM</a>
-            <a href="https://minhaarea.sp.gov.br/plataformasp" class="link-button" target="_blank">SEI</a>
-            <a href="https://cofin.sp.gov.br/#/" class="link-button" target="_blank">COFIN</a>
-            <a href="https://www.comprasnet.gov.br/seguro/loginPortal.asp" class="link-button" target="_blank">Compras</a>
-            <a href="https://docs.google.com/spreadsheets/d/1XttuzcvX8PUzgXWQv4DDtuibrZDugRYMvXwVq47qjo0/edit?gid=0#gid=0" class="link-button" target="_blank">Acompanhamento de Pedidos 2026 - UGE</a>
-            <a href="http://www.intranet.ccb.policiamilitar.sp.gov.br/aplicacoes/sisbol_login/frmlogin_cpd/" class="link-button" target="_blank">SISBOL</a>
-            <a href="http://intranet.policiamilitar.sp.gov.br/" class="link-button" target="_blank">Intranet</a>
-            <a href="https://correio.policiamilitar.sp.gov.br/iwaredir.nsf" class="link-button" target="_blank">E-mail Funcional</a>
-            <a href="https://web.whatsapp.com/" class="link-button" target="_blank">WhatsApp Web</a>
-            <a href="https://www.bec.sp.gov.br/BECSP/Home/Home.aspx" class="link-button" target="_blank">BEC</a>
-            <a href="https://sistemasadmin.intranet.policiamilitar.sp.gov.br/sipl/conqcm.aspx" class="link-button" target="_blank">Consulta QCM - SIPL</a>
-            <a href="https://sistemasadmin.intranet.policiamilitar.sp.gov.br/sipl/conopmpat.aspx" class="link-button" target="_blank">Consulta Patrimônio - SIPL</a>
+
+            <h2>LINKS RÁPIDOS</h2>
+
+            <a href="https://www.contabilizasp.fazenda.sp.gov.br/siafemnet/index.aspx" class="link-button" target="_blank">
+                <img src="SIAFEM.png" class="link-icon">
+                <span>SIAFEM</span>
+            </a>
+
+            <a href="https://minhaarea.sp.gov.br/plataformasp" class="link-button" target="_blank">
+                <img src="SEI.png" class="link-icon">
+                <span>SEI</span>
+            </a>
+
+            <a href="https://cofin.sp.gov.br/#/" class="link-button" target="_blank">
+                <img src="COFIN.png" class="link-icon">
+                <span>COFIN</span>
+            </a>
+
+            <a href="https://www.comprasnet.gov.br/seguro/loginPortal.asp" class="link-button" target="_blank">
+                <img src="Compras.png" class="link-icon">
+                <span>Compras</span>
+            </a>
+
+            <a href="https://docs.google.com/spreadsheets/d/1XttuzcvX8PUzgXWQv4DDtuibrZDugRYMvXwVq47qjo0/edit?gid=0#gid=0" class="link-button" target="_blank">
+                <img src="Acompanhar Pedidos.png" class="link-icon">
+                <span>Acompanhamento de Pedidos 2026 - UGE</span>
+            </a>
+
+            <a href="http://www.intranet.ccb.policiamilitar.sp.gov.br/aplicacoes/sisbol_login/frmlogin_cpd/" class="link-button" target="_blank">
+                <img src="DP.png" class="link-icon">
+                <span>SISBOL</span>
+            </a>
+
+            <a href="http://intranet.policiamilitar.sp.gov.br/" class="link-button" target="_blank">
+                <img src="PMESP.png" class="link-icon">
+                <span>Intranet</span>
+            </a>
+
+            <a href="https://correio.policiamilitar.sp.gov.br/iwaredir.nsf" class="link-button" target="_blank">
+                <img src="iNotes.png" class="link-icon">
+                <span>E-mail Funcional</span>
+            </a>
+
+            <a href="https://web.whatsapp.com/" class="link-button" target="_blank">
+                <img src="WhatsApp.png" class="link-icon">
+                <span>WhatsApp Web</span>
+            </a>
+
+            <a href="https://www.bec.sp.gov.br/BECSP/Home/Home.aspx" class="link-button" target="_blank">
+                <img src="BEC.png" class="link-icon">
+                <span>BEC</span>
+            </a>
+
         </div>
 
-        <!-- Coluna 2 -->
+        <!-- COLUNA 2 -->
         <div class="column">
+
             <h2>CERTIDÕES</h2>
-            <a href="https://www.fazenda.sp.gov.br/cadin_estadual/pages/publ/cadin.aspx" class="link-button" target="_blank">Secretaria da Fazenda</a>
-            <a href="https://www3.comprasnet.gov.br/sicaf-web/public/pages/consultas/consultarRestricaoContratarAdministracaoPublica.jsf" class="link-button" target="_blank">SICAF</a>
-            <a href="https://www.tst.jus.br/certidao1" class="link-button" target="_blank">Justiça do Trabalho</a>
-            <a href="https://www.bec.sp.gov.br/Sancoes_ui/aspx/ConsultaAdministrativaFornecedor.aspx" class="link-button" target="_blank">E-Sanções</a>
-            <a href="https://www.cnj.jus.br/improbidade_adm/consultar_requerido.php" class="link-button" target="_blank">CNJ</a>
-            <a href="https://consulta-crf.caixa.gov.br/consultacrf/pages/consultaEmpregador.jsf" class="link-button" target="_blank">Consulta Regularidade CAIXA</a>
-            <a href="http://www.servicos.controladoriageral.sp.gov.br/?PesquisaCEEP.aspx#gsc.tab=0" class="link-button" target="_blank">Controladoria</a>
-            <a href="https://www.tce.sp.gov.br/pesquisa-relacao-apenados" class="link-button" target="_blank">TCE-SP Apenados</a>
-            <a href="https://solucoes.receita.fazenda.gov.br/Servicos/cnpjreva/" class="link-button" target="_blank">REDESIM</a>
-            <a href="https://duc.prefeitura.sp.gov.br/certidoes/forms_anonimo/frmConsultaEmissaoCertificado.aspx" class="link-button" target="_blank">IPEM</a>
-            <a href="https://servicos.receitafederal.gov.br/servico/certidoes/#/home/cnpj" class="link-button" target="_blank">Receita Federal (CNPJ)</a>
+
+            <a href="https://www.fazenda.sp.gov.br/cadin_estadual/pages/publ/cadin.aspx" class="link-button" target="_blank">
+                <img src="icones/fazenda.png" class="link-icon">
+                <span>Secretaria da Fazenda</span>
+            </a>
+
+            <a href="https://www3.comprasnet.gov.br/sicaf-web/public/pages/consultas/consultarRestricaoContratarAdministracaoPublica.jsf" class="link-button" target="_blank">
+                <img src="XXX.png" class="link-icon">
+                <span>SICAF</span>
+            </a>
+
+            <a href="https://www.tst.jus.br/certidao1" class="link-button" target="_blank">
+                <img src="icones/trabalho.png" class="link-icon">
+                <span>Justiça do Trabalho</span>
+            </a>
+
+            <a href="https://www.bec.sp.gov.br/Sancoes_ui/aspx/ConsultaAdministrativaFornecedor.aspx" class="link-button" target="_blank">
+                <img src="icones/esancoes.png" class="link-icon">
+                <span>E-Sanções</span>
+            </a>
+
+            <a href="https://www.cnj.jus.br/improbidade_adm/consultar_requerido.php" class="link-button" target="_blank">
+                <img src="icones/cnj.png" class="link-icon">
+                <span>CNJ</span>
+            </a>
+
+            <a href="https://consulta-crf.caixa.gov.br/consultacrf/pages/consultaEmpregador.jsf" class="link-button" target="_blank">
+                <img src="icones/caixa.png" class="link-icon">
+                <span>Consulta Regularidade CAIXA</span>
+            </a>
+
+            <a href="http://www.servicos.controladoriageral.sp.gov.br/?PesquisaCEEP.aspx#gsc.tab=0" class="link-button" target="_blank">
+                <img src="icones/controladoria.png" class="link-icon">
+                <span>Controladoria</span>
+            </a>
+
+            <a href="https://www.tce.sp.gov.br/pesquisa-relacao-apenados" class="link-button" target="_blank">
+                <img src="icones/tce.png" class="link-icon">
+                <span>TCE-SP Apenados</span>
+            </a>
+
+            <a href="https://solucoes.receita.fazenda.gov.br/Servicos/cnpjreva/" class="link-button" target="_blank">
+                <img src="icones/redesim.png" class="link-icon">
+                <span>REDESIM</span>
+            </a>
+
+            <a href="https://duc.prefeitura.sp.gov.br/certidoes/forms_anonimo/frmConsultaEmissaoCertificado.aspx" class="link-button" target="_blank">
+                <img src="icones/ipem.png" class="link-icon">
+                <span>IPEM</span>
+            </a>
+
+            <a href="https://servicos.receitafederal.gov.br/servico/certidoes/#/home/cnpj" class="link-button" target="_blank">
+                <img src="icones/receita.png" class="link-icon">
+                <span>Receita Federal (CNPJ)</span>
+            </a>
+
         </div>
+
     </div>
+
 </div>
 
 <footer>
